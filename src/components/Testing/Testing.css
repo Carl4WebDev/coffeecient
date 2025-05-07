@@ -1,0 +1,27 @@
+.hover-container {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background-color: #3498db; /* Your base color */
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.hover-container:hover {
+  background-color: #2980b9; /* Darker version of base color */
+}
+
+.hover-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  transform: translateY(100%);
+  transition: all 0.3s ease;
+}
+
+.hover-container:hover .hover-content {
+  transform: translateY(0);
+}

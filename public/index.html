@@ -2,42 +2,144 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
       content="Web site created using create-react-app"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
     <title>React App</title>
   </head>
+
+  <style>
+    @media (pointer: fine) {
+      body {
+        cursor: none;
+      }
+    }
+    .custom-cursor {
+      position: fixed;
+      width: 100px;
+      height: 100px;
+      pointer-events: none;
+      z-index: 9999;
+      background-image: url(Cursor.png); /* Replace with your image */
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition: transform 0.1s ease;
+    }
+
+    /* Show system cursor when hovering text */
+    /* p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    span,
+    a,
+    li,
+    input,
+    textarea {
+      cursor: none !important;
+    } */
+
+    /* Hide custom cursor when system cursor is active */
+    /* body.show-system-cursor .custom-cursor {
+      display: none;
+    } */
+  </style>
+
   <body>
+    <audio
+      id="clickSound"
+      src="water-droplet-290186.mp3"
+      preload="auto"
+    ></audio>
+
+    <div class="custom-cursor"></div>
+
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
+
+  <script>
+    // Create cursor
+    const cursor = document.querySelector(".custom-cursor");
+
+    // Load sound
+    const clickSound = document.getElementById("clickSound");
+
+    // Track cursor state
+    let isUsingSystemCursor = false;
+
+    // Mouse movement
+    document.addEventListener("mousemove", (e) => {
+      if (!isUsingSystemCursor) {
+        cursor.style.transform = `translate(${e.clientX - 13}px, ${
+          e.clientY - 35
+        }px)`;
+      }
+    });
+
+    // Click handling
+    document.addEventListener("click", (e) => {
+      // Play sound
+      clickSound.currentTime = 0;
+      clickSound.play();
+
+      // Shrink animation (25% smaller)
+      cursor.style.transform = `
+          translate(${e.clientX - 13}px, ${e.clientY - 35}px) 
+          scale(0.75)
+      `;
+
+      // Return to normal after 100ms
+      setTimeout(() => {
+        cursor.style.transform = `
+          translate(${e.clientX - 13}px, ${e.clientY - 35}px) 
+          scale(1)
+          `;
+      }, 100);
+    });
+
+    // Text element hover detection
+    // const textElements = document.querySelectorAll(
+    //   "p, h1, h2, h3, h4, h5, h6, span, a, li, input, textarea"
+    // );
+
+    // textElements.forEach((el) => {
+    //   el.addEventListener("mouseenter", () => {
+    //     isUsingSystemCursor = true;
+    //     document.body.classList.add("show-system-cursor");
+    //     document.body.style.cursor = "text";
+    //   });
+
+    //   el.addEventListener("mouseleave", () => {
+    //     isUsingSystemCursor = false;
+    //     document.body.classList.remove("show-system-cursor");
+    //     document.body.style.cursor = "none";
+    //   });
+    // });
+
+    // // Fallback for touch devices
+    // if ("ontouchstart" in window) {
+    //   document.body.style.cursor = "default";
+    // }
+
+    // Hover effects for buttons
+    // document.querySelectorAll("button, [clickable]").forEach((el) => {
+    //   el.addEventListener("mouseenter", () => {
+    //     cursor.style.transform = `translate(${
+    //       el.getBoundingClientRect().left - 0
+    //     }px, ${el.getBoundingClientRect().top - 0}px) scale(1.2)`;
+    //   });
+    //   el.addEventListener("mouseleave", () => {
+    //     cursor.style.transform = `translate(${
+    //       el.getBoundingClientRect().left - 0
+    //     }px, ${el.getBoundingClientRect().top - 0}px) scale(1)`;
+    //   });
+    // });
+  </script>
 </html>
