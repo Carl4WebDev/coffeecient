@@ -109,107 +109,42 @@ const Hero = () => {
 
   return (
     <>
-      <section className="flex items-center justify-center mt-4 md:px-5 gap-y-20 sm:gap-24 md:gap-36 lg:gap-96 flex-wrap min-w-full">
-        <div className="space-y-3 text-center">
-          <div className="text-5xl font-bold text-[#3b2519] flex items-center justify-center">
-            <img src={CoffeecientLogo} className="min-w-24 w-72" />
-          </div>
-          <ParticleEffect options={{ particleCount: 10, size: 10 }}>
-            <button className="mt-5 bg-[#a26d3c] text-white text-base px-6 py-2 rounded shadow hover:bg-[#8b572a] transition">
-              Order now →
-            </button>
-          </ParticleEffect>
-        </div>
+      <section className="min-w-full h-72">
+        <img src={PlaceholderImg} className="h-80 w-full" />
+      </section>
 
-        <div className="flex md:gap-4 justify-center items-center ">
-          {/* Left Image - vertically centered */}
-          <div className="w-32 min-w-8 sm:translate-x-0 translate-x-16 hover:z-20 h-[400px] flex items-center justify-center overflow-hidden rounded shadow-md">
-            <img
-              src={Left}
-              alt=""
-              className="w-full h-full object-cover transition duration-300 ease-in-out hover:-translate-y-6 hover:scale-110"
-            />
-          </div>
-
-          {/* Center Image - tallest */}
-          <div className="w-52 min-w-10 duration-300 ease-in-out h-[520px] z-10  overflow-hidden rounded shadow-lg">
-            <img
-              src={Mid}
-              alt=""
-              className="w-full h-full object-cover transition duration-300 ease-in-out hover:-translate-y-6 hover:scale-110"
-            />
-          </div>
-
-          {/* Right Image - vertically centered */}
-          <div className="w-32 min-w-8  sm:-translate-x-0 -translate-x-16 hover:z-20 h-[400px] flex items-center justify-center overflow-hidden rounded shadow-md">
-            <img
-              src={Right}
-              alt=""
-              className="w-full h-full object-cover  transition duration-300 ease-in-out hover:-translate-y-6 hover:scale-110"
-            />
-          </div>
+      <section className="p-4 mb-4">
+        <div className="w-full">
+          <h2 className="text-4xl font-bold ml-5 mb-2 mt-10 text-start">
+            Coffee and Drinks
+          </h2>
+          <ProductCarousel products={products} />
         </div>
       </section>
 
-      <section className="px-10 pb-20">
-        <h2 className="text-4xl font-bold mb-10 mt-10 text-center">
-          BEST SELLER
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {products.map((product, index) => (
-            <ProductCard
-              key={index}
-              image={Coffee}
-              name={product.name}
-              price={product.price}
-              description={product.description}
-              imageHeight={product.imageHeight}
-            />
-          ))}
+      <section className="p-4 ">
+        <div className="w-full px-2">
+          <h2 className="text-4xl font-bold ml-5 mb-2 mt-4 text-start">
+            Pastries and Breads
+          </h2>
+          <ProductCarousel products={products} />
         </div>
       </section>
 
-      {/* testing */}
-      <div className="w-auto p-5">
-        <ProductCarousel products={products} />
-      </div>
-
-      <section className="grid grid-cols-1 md:grid-cols-12   gap-4 bg-[#2C1B18] items-center ">
-        <div className="col-span-4 p-12">
-          <div
-            className="  border-gray-200 flex items-center justify-center"
-            style={{ border: "5px solid white" }}
-          >
-            <img src={CoffeecientLogo} className="h-20 w-44" />
-          </div>
-          <div className="flex flex-col justify-between items-start">
-            <div>
-              <div className="text-3xl font-bold text-white">we offer on</div>
-              <div className="text-3xl font-bold text-[#77512d]">
-                packed coffee
-              </div>
-            </div>
-            <ParticleEffect options={{ particleCount: 10, size: 10 }}>
-              <button className="mt-5 bg-[#a26d3c] text-white text-base px-6 py-2 rounded shadow hover:bg-[#8b572a] transition">
-                Order now →
-              </button>
-            </ParticleEffect>
-          </div>
-        </div>
-        <div className="col-span-8 p-4">
-          <GradientBorderEffect>
-            <img
-              src={PlaceholderImg}
-              className="h-72 min-h-48 w-full transition duration-300 ease-in-out hover:-translate-y-2 hover:scale-100"
-            />
-          </GradientBorderEffect>
+      <section className="p-4 ">
+        <div className="w-full px-2">
+          <h2 className="text-4xl font-bold ml-5 mb-2 mt-4 text-start">
+            Packed Coffee
+          </h2>
+          <ProductCarousel products={products} />
         </div>
       </section>
 
-      <section className="px-10 pb-20">
-        <h2 className="text-4xl font-bold mb-10 mt-10 text-center">
-          LIMITED MERCH
-        </h2>
+      <section className="min-w-full h-96">
+        <img src={PlaceholderImg} className="h-96 w-full" />
+      </section>
+
+      <section className="px-10 pb-20 mt-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {merchItems.map((product, index) => (
             <ProductCard

@@ -13,6 +13,10 @@ module.exports = {
       rotate: {
         "y-180": "rotateY(180deg)",
       },
+      customizeLinks: {
+        "customize-links":
+          "rounded-md font-bold text-gray-600 hover:text-btn-login p-2 hover:border hover:border-btn-login transition-colors",
+      },
     },
   },
   variants: {

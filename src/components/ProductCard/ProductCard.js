@@ -1,4 +1,5 @@
 import { MagicCard } from "./MagicCard";
+import ParticleEffect from "../ParticleEffect/ParticleEffect";
 
 const ProductCard = ({
   image,
@@ -40,9 +41,11 @@ const ProductCard = ({
           {name}
         </h3>
 
-        <button className="mt-auto bg-[#a26d3c] hover:bg-[#8b572a] text-white font-medium py-3 px-6 rounded-lg transition-colors duration-300 transform hover:scale-105 active:scale-95">
-          Add to Cart
-        </button>
+        <ParticleEffect options={{ particleCount: 10, size: 10 }}>
+          <button className="w-full mt-auto bg-[#a26d3c] hover:bg-[#8b572a] text-white font-medium py-3 px-6 rounded-lg transition-colors duration-300 transform hover:scale-105 active:scale-95">
+            Add to Cart
+          </button>
+        </ParticleEffect>
       </div>
     </div>
   );

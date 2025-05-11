@@ -1,12 +1,18 @@
 import coffeecient from "../../assets/images/coffeecient-logo.png";
 
-import React from "react";
 import { useState } from "react";
 import { ShoppingCartIcon } from "lucide-react";
+import ParticleEffect from "../ParticleEffect/ParticleEffect";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const navLinks = ["Home", "Products", "About Us", "Contact"];
+  const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "Products", path: "/products-page" },
+    { name: "About", path: "/about-us" },
+    { name: "Contact", path: "/contact" },
+  ];
   return (
     <nav className="bg-bg-navbar shadow-sm py-4 px-6">
       <div className="max-w-7xl mx-auto">
@@ -14,31 +20,44 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           {/* Logo on left */}
           <div className="flex items-center">
-            <img className=" min-w-24 w-60 h-20" src={coffeecient} />
+            <Link to="/">
+              <img className=" min-w-24 w-60 h-20" src={coffeecient} />
+            </Link>
           </div>
 
           {/* Desktop Navigation (hidden on mobile) */}
-          <div className="hidden md:flex space-x-8">
-            {navLinks.map((link) => (
-              <a
-                key={link}
-                href="#"
-                className="text-gray-600 hover:text-gray-900 transition-colors"
-              >
-                {link}
-              </a>
-            ))}
+          <div className="hidden md:flex">
+            <ParticleEffect
+              options={{ particleCount: 10, size: 10 }}
+              className="space-x-8"
+            >
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name} // Assuming each link has a 'name' property
+                  to={link.path} // Add path to your navLinks data
+                  className="rounded-md font-bold text-gray-600 hover:text-btn-login p-2 hover:border hover:border-btn-login transition-colors"
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </ParticleEffect>
           </div>
 
           {/* Right-aligned buttons (always visible) */}
           <div className="flex items-center space-x-4">
-            <button>
-              <ShoppingCartIcon className="w-10 h-10 " />
-            </button>
+            <ParticleEffect options={{ particleCount: 10, size: 10 }}>
+              <button>
+                <ShoppingCartIcon className="w-10 h-10 hover:scale-x-50 transition-all " />
+              </button>
+            </ParticleEffect>
 
-            <button className="px-4 py-2 bg-btn-login text-white rounded hover:bg-btn-login-shadow">
-              Login
-            </button>
+            <ParticleEffect options={{ particleCount: 10, size: 10 }}>
+              <Link to="auth-page">
+                <button className="px-4 py-2 bg-btn-login text-white rounded hover:bg-btn-login-shadow">
+                  Login
+                </button>
+              </Link>
+            </ParticleEffect>
 
             {/* Mobile menu button (hidden on desktop) */}
             <button
@@ -75,14 +94,14 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden mt-4 pb-4 space-y-2  text-center ">
             {navLinks.map((link) => (
-              <a
-                key={link}
-                href="#"
+              <Link
+                key={link.name} // Assuming each link has a 'name' property
+                to={link.path} // Add path to your navLinks data
                 className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50"
                 onClick={() => setIsOpen(false)}
               >
-                {link}
-              </a>
+                {link.name}
+              </Link>
             ))}
           </div>
         )}
