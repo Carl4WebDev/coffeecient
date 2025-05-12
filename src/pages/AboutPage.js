@@ -2,6 +2,9 @@ import React from "react";
 import PlaceholderImg from "../assets/images/placeholder.jpg";
 import CoffeecientLogo from "../assets/images/coffeecient-logo-removebg-preview.png";
 
+import About1 from "../assets/coffeecient-images/aboutus_pic1.jpg";
+import About2 from "../assets/coffeecient-images/aboutus_pic2.jpg";
+import About3 from "../assets/coffeecient-images/aboutus_pic3.jpg";
 const AboutPage = () => {
   return (
     <>
@@ -28,21 +31,50 @@ const AboutPage = () => {
         </p>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-          <img
-            src={PlaceholderImg}
-            alt="Image 1"
-            class="object-cover h-96 w-full "
-          />
-          <img
-            src={PlaceholderImg}
-            alt="Image 2"
-            class="object-cover h-96 w-full "
-          />
-          <img
-            src={PlaceholderImg}
-            alt="Image 3"
-            class="object-cover h-96 w-full "
-          />
+          {/* Image 1 - Brewing Action */}
+          <div class="relative group">
+            <img
+              src={About1}
+              alt="Barista brewing coffee"
+              class="object-fill h-96 w-full rounded-md transition duration-300 ease-in-out group-hover:-translate-y-6 group-hover:-rotate-3 group-hover:scale-110"
+            />
+            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 rounded-md transition duration-300 flex items-center justify-center">
+              <p class="text-white text-center p-4">
+                <strong>Watch our baristas</strong> craft your espresso with
+                precision—every shot pulled to perfection.
+              </p>
+            </div>
+          </div>
+
+          {/* Image 2 - Café Experience */}
+          <div class="relative group">
+            <img
+              src={About2}
+              alt="Friends chatting in café"
+              class="object-fill h-96 w-full rounded-md transition duration-300 ease-in-out group-hover:-translate-y-6 group-hover:scale-110"
+            />
+            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 rounded-md transition duration-300 flex items-center justify-center">
+              <p class="text-white text-center p-4">
+                <strong>Join the conversation</strong> in our sunlit space—where
+                ideas flow as smoothly as our cold brew.
+              </p>
+            </div>
+          </div>
+
+          {/* Image 3 - Learning */}
+          <div class="relative group">
+            <img
+              src={About3}
+              alt="Barista teaching coffee art"
+              class="object-fill h-96 w-full rounded-md transition duration-300 ease-in-out group-hover:-translate-y-6 group-hover:rotate-3 group-hover:scale-110"
+            />
+            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 rounded-md transition duration-300 flex items-center justify-center">
+              <p class="text-white text-center p-4">
+                <strong>Learn the secrets</strong> behind latte art—book a
+                workshop and swirl your own masterpiece.
+              </p>
+            </div>
+          </div>
         </div>
       </main>
     </>

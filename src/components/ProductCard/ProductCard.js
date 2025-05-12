@@ -20,7 +20,7 @@ const ProductCard = ({
               <img
                 src={image}
                 alt={name}
-                className={`object-cover w-full h-full bg-contain transition-transform duration-500 group-hover:scale-110`}
+                className={`object-cover p-1 w-full h-full bg-contain transition-transform duration-500 group-hover:scale-110`}
               />
               {/* Dark overlay with description */}
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 flex items-center justify-center p-4 transition-all duration-300 opacity-0 group-hover:opacity-100">

@@ -12,96 +12,104 @@ import ProductCarousel from "../components/ProductCard/ProductCarousel";
 import ParticleEffect from "../components/ParticleEffect/ParticleEffect";
 import GradientBorderEffect from "../components/GradientBorder/GradientBorderEffect";
 
+import ProductBanner from "../assets/coffeecient-images/product-banner.jpg";
+import GirlBanner from "../assets/coffeecient-images/girl-coffeecient.png";
+
+// Products
+import Seashore from "../assets/coffeecient-images/seashore.png";
+import Valerina from "../assets/coffeecient-images/valerina.png";
+import CreamyWhite from "../assets/coffeecient-images/creamywhite.png";
+import Monay from "../assets/coffeecient-images/monay.png";
+import ChocoBread from "../assets/coffeecient-images/chocobread.png";
+import Pie from "../assets/coffeecient-images/pie.png";
+
+// merchants
+import Mug from "../assets/coffeecient-images/mug.png";
+import Shirt from "../assets/coffeecient-images/shirt.png";
+import Bag from "../assets/coffeecient-images/bag.png";
+
 const Hero = () => {
   const products = [
     {
-      image:
-        "https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=650&q=40",
+      image: Seashore,
       name: "Seashore Cream",
       price: "19.99",
       description:
-        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "A rich, velvety cream with soothing sea minerals for soft, hydrated skin.",
       imageHeight: "h-40",
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=650&q=40",
+      image: Valerina,
       name: "Valerina Capucino",
       price: "17.99",
       description:
-        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "Smooth cappuccino blend with a hint of vanilla for a luxurious coffee experience.",
       imageHeight: "h-40",
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=650&q=40",
+      image: CreamyWhite,
       name: "Creamy White",
       price: "9.99",
       description:
-        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "Light and fluffy cream perfect for brightening and moisturizing your skin.",
       imageHeight: "h-40",
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=650&q=40",
+      image: Monay,
       name: "Monay Nanay",
       price: "6.99",
       description:
-        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "A classic Filipino bread, soft and slightly sweet—perfect with coffee.",
       imageHeight: "h-24",
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=650&q=40",
+      image: ChocoBread,
       name: "Super Coffee",
       price: "9.99",
       description:
-        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "Bold, chocolate-infused coffee for an energizing morning boost.",
       imageHeight: "h-24",
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=650&q=40",
+      image: Pie,
       name: "Haplas",
       price: "8.99",
       description:
-        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "Crumbly, buttery pastry with a delightful melt-in-your-mouth texture.",
       imageHeight: "h-24",
     },
   ];
-
   const merchItems = [
     {
       id: 1,
-      image: "shirt.png",
+      image: Mug,
       alt: "Shirt",
-      name: "Coffecient Shirt",
+      name: "Coffecient Mug",
       price: "24.99",
       description:
-        "Soft blended fabric, retro print design, slightly fitted cut. Eco-friendly inks used. Size XS-XL.",
+        "Premium ceramic mug with a sleek design—perfect for your daily brew.",
       width: "w-32",
       height: "h-32",
     },
     {
       id: 2,
-      image: "mug.png",
+      image: Shirt,
       alt: "Mug",
-      name: "Signature Mug",
+      name: "Signature Shirt",
       price: "12.99",
       description:
-        "Soft blended fabric, retro print design, slightly fitted cut. Eco-friendly inks used. Size XS-XL.",
-
+        "Comfortable cotton tee with a minimalist coffee-themed print.",
       width: "w-24",
       height: "h-24",
     },
     {
       id: 3,
-      image: "cap.png",
+      image: Bag,
       alt: "Cap",
-      name: "Barista Cap",
+      name: "Coffeecient Bag",
       price: "15.99",
       description:
-        "Soft blended fabric, retro print design, slightly fitted cut. Eco-friendly inks used. Size XS-XL.",
+        "Stylish tote bag with durable fabric—ideal for coffee runs and errands.",
       width: "w-24",
       height: "h-24",
     },
@@ -109,8 +117,8 @@ const Hero = () => {
 
   return (
     <>
-      <section className="min-w-full h-72">
-        <img src={PlaceholderImg} className="h-80 w-full" />
+      <section className="w-full flex justify-center ">
+        <img src={ProductBanner} className="h-96 w-11/12 object-fill" />
       </section>
 
       <section className="p-4 mb-4">
@@ -140,8 +148,16 @@ const Hero = () => {
         </div>
       </section>
 
-      <section className="min-w-full h-96">
-        <img src={PlaceholderImg} className="h-96 w-full" />
+      <section className="min-w-full bg-white  p-4 grid grid-cols-1 md:grid-cols-10 gap-4">
+        <div className="col-span-4 flex flex-col items-end justify-center">
+          <div className="flex flex-col items-center gap-4">
+            <h1 className="text-4xl font-bold">we also offers</h1>
+            <span className="text-5xl font-bold text-[#A47149]">MERCHANTS</span>
+          </div>
+        </div>
+        <div className="col-span-6">
+          <img src={GirlBanner} className=" w-full" />
+        </div>
       </section>
 
       <section className="px-10 pb-20 mt-10">
@@ -149,7 +165,7 @@ const Hero = () => {
           {merchItems.map((product, index) => (
             <ProductCard
               key={index}
-              image={Merchats}
+              image={product.image}
               name={product.name}
               price={product.price}
               description={product.description}

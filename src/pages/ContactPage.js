@@ -4,6 +4,9 @@ import PlaceholderImg from "../assets/images/placeholder.jpg";
 import CoffeecientLogo from "../assets/images/coffeecient-logo-removebg-preview.png";
 import Subsciption from "../components/Subscription/Subsciption";
 
+import ContactBanner from "../assets/coffeecient-images/contact-banner.jpg";
+import Bean from "../assets/coffeecient-images/bean.png";
+
 const ContactPage = () => {
   const [contactSuccess, setContactSuccess] = useState(false);
   const [surveySuccess, setSurveySuccess] = useState(false);
@@ -59,11 +62,11 @@ const ContactPage = () => {
   return (
     <div className="mb-4">
       <div>
-        <img src={PlaceholderImg} className="h-52 min-w-full" />
+        <img src={ContactBanner} className="h-96 min-w-full object-fill " />
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 text-gray-700 gap-4 mt-4 mb-4">
-        <div className="p-4 flex flex-col justify-center items-start bg-white">
+        <div className="p-4 flex flex-col justify-center items-start bg-white rounded-md">
           <h1 className="font-bold text-4xl mb-4">By Phone</h1>
           <div>Operates only on Monday to Friday [10am-3pm]</div>
           <h2 className="font-bold text-2xl mb-2">Davao City</h2>
@@ -71,7 +74,7 @@ const ContactPage = () => {
           <h2 className="font-bold text-2xl mb-2">Nationwide</h2>
           <div>0922AYAWTUO / 0922AYAWTUO</div>
         </div>
-        <div className="p-4 flex flex-col justify-center items-start bg-white">
+        <div className="p-4 flex flex-col justify-center items-start bg-white rounded-md">
           <h1 className="font-bold text-4xl mb-8">Social Media</h1>
           <div className="flex flex-wrap gap-6">
             <a>
@@ -130,7 +133,7 @@ const ContactPage = () => {
             <a>Privacy Policy</a>|<a>Terms of Service</a>
           </div>
         </div>
-        <div className="p-4 flex flex-col justify-start items-start gap-2 bg-white h-auto">
+        <div className="p-4 flex flex-col justify-start items-start gap-2 bg-white h-auto rounded-md">
           <h1 className="font-bold text-4xl mb-2">On Site</h1>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.30123456789!2d120.9841234!3d14.5897654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397ca03571ec38b%3A0x69d1d5751069c11f!2sManila%20City%20Hall!5e0!3m2!1sen!2sph!4v1234567890"
@@ -158,7 +161,7 @@ const ContactPage = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 mt-4 mb-4">
         <div className="p-4">
-          <img src={PlaceholderImg} />
+          <img src={Bean} />
         </div>
         <div>
           <div className="max-w-full mx-auto p-4  rounded-lg">

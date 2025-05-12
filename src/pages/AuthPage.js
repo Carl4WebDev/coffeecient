@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import PlaceholderImg from "../assets/images/placeholder.jpg";
 import CoffeecientLogo from "../assets/images/coffeecient-logo-removebg-preview.png";
 
+import Bean from "../assets/coffeecient-images/bean.png";
+
 const AuthPage = () => {
   // State for input fields
   const [fullName, setFullName] = useState("");
@@ -89,7 +91,7 @@ const AuthPage = () => {
 
   return (
     <>
-      <div className="w-full h-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 ">
+      <div className="w-full h-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 p-4">
         <div className="h-[700px] flex justify-center items-center ">
           <div className=" ">
             <div className="flex justify-center items-center">
@@ -202,7 +204,7 @@ const AuthPage = () => {
         </div>
 
         <div className="hidden h-[700px] sm:flex sm:justify-center sm:items-center">
-          <img src={PlaceholderImg} />
+          <img src={Bean} />
         </div>
       </div>
     </>
