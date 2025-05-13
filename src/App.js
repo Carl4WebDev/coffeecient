@@ -8,6 +8,7 @@ import ProductsPage from "./pages/ProductsPage";
 import AuthPage from "./pages/AuthPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
+import BackToHome from "./components/BackToHome/BackToHome";
 
 function App() {
   return (
@@ -23,7 +24,15 @@ function App() {
             <Route path="/contact" element={<ContactPage />} />
           </Routes>
         </main>
+
+        <BackToHome />
         <Footer />
+        <a
+          href="https://github.com/Carl4WebDev/coffeecient"
+          className="hover:text-[#C99266] flex justify-center bg-white p-4"
+        >
+          https://github.com/Carl4WebDev/coffeecient
+        </a>
       </div>
     </Router>
   );

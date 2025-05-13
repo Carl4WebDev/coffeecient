@@ -1,8 +1,21 @@
-
 body {
-  background-color: #EFE1D6;
+  background-color: #efe1d6;
   cursor: none;
 }
-p,h1,h2,h3,h4,h5,h6,span,a,li,input,button {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+a,
+li,
+input,
+button {
   cursor: none;
+}
+html {
+  scroll-behavior: smooth;
 }

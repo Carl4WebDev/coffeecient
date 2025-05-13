@@ -14,7 +14,7 @@ const Navbar = () => {
     { name: "Contact", path: "/contact" },
   ];
   return (
-    <nav className="bg-bg-navbar shadow-sm py-4 px-6">
+    <nav id="navbar" className="bg-bg-navbar shadow-sm py-4 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Desktop/Mobile Header */}
         <div className="flex items-center justify-between">
