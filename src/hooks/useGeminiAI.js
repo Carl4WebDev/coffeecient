@@ -6,6 +6,7 @@ const useGeminiAI = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  // Initialize with YOUR exact model configuration
   const genAI = new GoogleGenerativeAI(process.env.REACT_APP_GEMINI_API_KEY);
 
   const model = genAI.getGenerativeModel({
@@ -48,7 +49,6 @@ const useGeminiAI = () => {
     - Unclear questions: "Could you rephrase that? I want to give you a complete answer."
     `,
   });
-
   const sendMessage = async (input) => {
     setIsLoading(true);
     setError(null);
@@ -57,36 +57,23 @@ const useGeminiAI = () => {
       // Add user message to UI immediately
       setMessages((prev) => [...prev, { role: "user", content: input }]);
 
-      // Optimized history (last 2 messages to prevent token overflow)
-      const recentHistory = messages.slice(-2).map((msg) => ({
-        role: msg.role === "user" ? "user" : "model",
-        parts: [{ text: msg.content }],
-      }));
-
+      // Start chat with history
       const chat = model.startChat({
-        history: recentHistory,
+        history: messages.map((msg) => ({
+          role: msg.role === "user" ? "user" : "model",
+          parts: [{ text: msg.content }],
+        })),
       });
 
-      // Add timeout safety
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 10000); // 10s timeout
-
-      const result = await chat.sendMessage(input, {
-        signal: controller.signal,
-      });
-      clearTimeout(timeoutId);
-
+      // Get response
+      const result = await chat.sendMessage(input);
       const response = await result.response;
       const text = response.text();
 
       // Add AI response
       setMessages((prev) => [...prev, { role: "assistant", content: text }]);
     } catch (err) {
-      setError(
-        err.name === "AbortError"
-          ? "Brewing took too long - try a simpler question ☕"
-          : "We're refreshing our beans! Please try again in a moment"
-      );
+      setError("AI is currently unavailable. Please try later.");
       console.error("Gemini Error:", err);
     } finally {
       setIsLoading(false);
