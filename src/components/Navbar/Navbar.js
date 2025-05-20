@@ -5,7 +5,11 @@ import { ShoppingCartIcon } from "lucide-react";
 import ParticleEffect from "../ParticleEffect/ParticleEffect";
 import { Link } from "react-router-dom";
 
+import { useCart } from "../../context/CartContext";
+
 const Navbar = () => {
+  const { cartList } = useCart();
+
   const [isOpen, setIsOpen] = useState(false);
   const navLinks = [
     { name: "Home", path: "/" },
@@ -44,11 +48,16 @@ const Navbar = () => {
           </div>
 
           {/* Right-aligned buttons (always visible) */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4 ">
             <ParticleEffect options={{ particleCount: 10, size: 10 }}>
-              <button>
-                <ShoppingCartIcon className="w-10 h-10 hover:scale-x-50 transition-all " />
-              </button>
+              <Link to="cart">
+                <div>
+                  <ShoppingCartIcon className="w-10 h-10 hover:scale-x-50 transition-all " />
+                </div>
+                <span className="bg-btn-login w-6 flex justify-center items-center h-6 absolute p-1 -translate-y-4 translate-x-7  text-white rounded-md">
+                  {cartList.length}
+                </span>
+              </Link>
             </ParticleEffect>
 
             <ParticleEffect options={{ particleCount: 10, size: 10 }}>

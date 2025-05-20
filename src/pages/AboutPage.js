@@ -5,6 +5,7 @@ import CoffeecientLogo from "../assets/images/coffeecient-logo-removebg-preview.
 import About1 from "../assets/coffeecient-images/aboutus_pic1.jpg";
 import About2 from "../assets/coffeecient-images/aboutus_pic2.jpg";
 import About3 from "../assets/coffeecient-images/aboutus_pic3.jpg";
+
 const AboutPage = () => {
   return (
     <>

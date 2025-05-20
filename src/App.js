@@ -9,7 +9,9 @@ import AuthPage from "./pages/AuthPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import BackToHome from "./components/BackToHome/BackToHome";
+import CartPage from "./pages/CartPage";
 
+import ChatBox from "./components/Chatbox/ChatBox";
 function App() {
   return (
     <Router>
@@ -22,10 +24,12 @@ function App() {
             <Route path="/auth-page" element={<AuthPage />} />
             <Route path="/about-us" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/cart" element={<CartPage />} />
           </Routes>
         </main>
 
         <BackToHome />
+        <ChatBox />
         <Footer />
         <a
           href="https://github.com/Carl4WebDev/coffeecient"
